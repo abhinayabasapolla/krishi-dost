@@ -2,41 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Krishi Dost Design System - Agricultural theme with natural colors and accessibility focus */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Natural agricultural color palette */
+    --background: 48 100% 97%;
+    --foreground: 25 45% 15%;
 
+    /* Card system for content organization */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 25 45% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 25 45% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Rich crop green */
+    --primary: 120 45% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 120 40% 35%;
+    --primary-glow: 120 50% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm earth tones */
+    --secondary: 35 25% 85%;
+    --secondary-foreground: 25 45% 15%;
+    --secondary-rich: 30 35% 65%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted earth tones */
+    --muted: 45 15% 92%;
+    --muted-foreground: 25 25% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Golden harvest */
+    --accent: 45 95% 65%;
+    --accent-foreground: 25 45% 15%;
+    --accent-warm: 40 85% 55%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive for warnings */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* UI elements */
+    --border: 35 15% 85%;
+    --input: 35 15% 88%;
+    --ring: 120 45% 25%;
 
-    --radius: 0.5rem;
+    /* Sky blue for weather elements */
+    --sky: 200 85% 65%;
+    --sky-light: 200 75% 85%;
+
+    /* Success green for growth */
+    --success: 140 65% 45%;
+    --success-light: 140 45% 85%;
+
+    /* Warning orange for alerts */
+    --warning: 25 85% 55%;
+    --warning-light: 25 75% 85%;
+
+    /* Agricultural gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(120 45% 25%), hsl(140 65% 45%));
+    --gradient-earth: linear-gradient(180deg, hsl(45 95% 65%), hsl(30 35% 65%));
+    --gradient-sky: linear-gradient(180deg, hsl(200 85% 65%), hsl(200 75% 85%));
+    --gradient-sunrise: linear-gradient(90deg, hsl(45 95% 65%), hsl(25 85% 55%));
+
+    /* Shadows with natural depth */
+    --shadow-soft: 0 2px 10px hsl(25 25% 15% / 0.1);
+    --shadow-card: 0 4px 20px hsl(25 25% 15% / 0.08);
+    --shadow-elevated: 0 10px 40px hsl(25 25% 15% / 0.12);
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +93,47 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme with agricultural feel */
+    --background: 25 15% 8%;
+    --foreground: 48 50% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 20% 12%;
+    --card-foreground: 48 50% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 20% 12%;
+    --popover-foreground: 48 50% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 120 50% 45%;
+    --primary-foreground: 25 15% 8%;
+    --primary-light: 120 45% 55%;
+    --primary-glow: 120 55% 65%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 35 15% 20%;
+    --secondary-foreground: 48 50% 92%;
+    --secondary-rich: 30 25% 35%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 25 10% 18%;
+    --muted-foreground: 48 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 85% 55%;
+    --accent-foreground: 25 15% 8%;
+    --accent-warm: 40 75% 45%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 48 50% 92%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 25 15% 25%;
+    --input: 25 15% 25%;
+    --ring: 120 50% 45%;
+
+    --sky: 200 75% 55%;
+    --sky-light: 200 65% 35%;
+
+    --success: 140 55% 35%;
+    --success-light: 140 35% 25%;
+
+    --warning: 25 75% 45%;
+    --warning-light: 25 55% 25%;
   }
 }
 
@@ -100,6 +143,62 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Agricultural utility classes */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-earth {
+    background: var(--gradient-earth);
+  }
+  
+  .gradient-sky {
+    background: var(--gradient-sky);
+  }
+  
+  .gradient-sunrise {
+    background: var(--gradient-sunrise);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Agricultural component patterns */
+  .farmer-card {
+    @apply bg-card border border-border rounded-lg shadow-card transition-smooth;
+  }
+  
+  .farmer-card:hover {
+    @apply shadow-elevated scale-105;
+  }
+
+  .service-button {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg p-6 text-center transition-bounce shadow-soft;
+  }
+  
+  .service-button:hover {
+    @apply shadow-elevated transform scale-105;
   }
 }
